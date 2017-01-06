@@ -1,0 +1,466 @@
+﻿@potato: rgb(100,100,100);
+@myBlue: #003b64;
+/*#region Css Reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*#endregion */
+
+body {
+    height: 6000px;
+    font-family: "Gotham Narrow SSm A","Gotham Narrow SSm B","Franklin Gothic",sans-serif;
+}
+
+.global_wrap {
+    width: 100%;
+    height: 100%;
+    background-color: @potato;
+}
+
+* {
+    margin: 0; padding: 0;
+}
+
+.content {
+    width: 1012px;
+    height: 1380px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+/*#region header*/
+
+header {
+    width: 100%;
+    height: 180px;
+    background-color: rgb(161, 193, 244);
+    position: relative;
+}
+.hcontent {
+    background-color: rgb(161, 193, 244);
+    background:url(../Imgs/walking.png) no-repeat 195px 85px, radial-gradient(ellipse at top left, white 12%, rgb(161, 193, 244) 80%);
+    background: url(../Imgs/walking.png) no-repeat 195px 85px, -webkit-radial-gradient(ellipse at top left, white 12%, rgb(161, 193, 244) 80%);
+}
+.headhouse {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 130px;
+    width: 160px;
+}
+.hText {
+    font-family: "Pinyon Script", cursive;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.hText h1 {
+	font-size: 3em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: .45em;
+    margin-top: .85em;
+    text-indent: 5.2em;
+}
+.hText p {
+    font-size: 1.9em;
+    color: rgba(90,90,90,.6);
+    text-indent: 15em;
+    margin-top: .75em;
+}
+/*#region smeadia*/
+
+.smedia {
+    height: 20px;
+    position: absolute;
+}
+.smedia > ul {
+    position: relative;
+    display: inline-block;
+    left: 836px;
+    height: 28px;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.smedia > ul li {
+    float: left;
+    height: 28px;
+    width: 28px;
+}
+.smedia a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    height: 28px;
+    width: 28px;
+}
+.fb {
+    background: url(../Imgs/social_icons.jpg) no-repeat;
+    border-radius: 3px 0 0 3px;
+    transition: 550ms;
+}
+.fb:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat 0 -29px;
+}
+
+.tt {
+    background: url(../Imgs/social_icons.jpg) no-repeat -29px 0;
+    transition: 550ms;
+}
+.tt:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat -29px -29px;
+}
+
+.yt {
+    background: url(../Imgs/social_icons.jpg) no-repeat -58px 0;
+    transition: 550ms;
+}
+.yt:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat -58px -29px;
+}
+
+.ig {
+    background: url(../Imgs/social_icons.jpg) no-repeat -86px 0;
+    transition: 550ms;
+}
+.ig:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat -86px -29px;
+}
+
+.t {
+    background: url(../Imgs/social_icons.jpg) no-repeat -142px 0px;
+    transition: 550ms;
+}
+.t:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat -142px -29px;
+}
+
+.gg {
+    background: url(../Imgs/social_icons.jpg) no-repeat -172px 0px;
+    border-radius: 0 3px 3px 0;
+    transition: 550ms;
+}
+.gg:hover {
+    background: url(../Imgs/social_icons.jpg) no-repeat -172px -29px;
+}
+
+/*#endregion*/
+
+/*#region header basic nav*/
+
+
+.basic {
+    border-top: 2px solid #fff2e6;
+    position: relative;
+    top: -12px;
+    width: 100%;
+}
+
+.basic > ul {
+    background-color: #002e4e;
+    max-width: 1012px;
+    width: 100%;
+    padding: 8px 0;
+    height: 48px;
+}
+.basic > ul > li {
+    position: relative;
+    display: inline-block;
+    width: 24.7%;
+    border-left: 2px solid #fff2e6;
+    height: 30px;
+}
+.basic > ul > li:first-child {
+    border-left: none;
+}
+.basic a {
+    display: inline-block;
+    color: #fff2e6;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    height: 30px;
+    padding: 5px 0;
+    font-size: 1.4em;
+}
+.basic  ul  ul {
+    transform: scale(1,0);
+    transform-origin: top;
+    position: absolute;
+    top: 100%;
+    background-color: #002e4e;
+    left: 6%;
+    }
+.basic ul li:hover ul {
+    transform: scale(1,1);
+    transition: 450ms 85ms;
+    z-index: 1;
+    -webkit-box-shadow: rgba(0,0,0,0.5) 2px 4px 7px 2px ;
+    -moz-box-shadow: rgba(0,0,0,0.5) 2px 4px 7px 2px ;
+    box-shadow: rgba(0,0,0,0.5) 2px 4px 7px 2px ;
+
+    }
+.basic ul ul li {
+    transition: none;
+    border-bottom: 1px solid black;
+    width: 220px;
+    }
+.basic ul ul li a {
+    max-width: 100%;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+.basic ul li:hover {
+        background-color: @myBlue;
+    }
+/*#endregion*/
+
+/*#endregion*/
+
+main {
+    height: 1056px;
+    background-color: rgb(230, 230, 255);
+    position: relative;
+}
+
+footer {
+    width: 100%;
+    height: 144px;
+    background-color: @myBlue;
+    position: relative;
+    padding-top: .85em
+}
+footer img {
+    float: left;
+    margin-top: -10px;
+    margin-left: 4.5em;
+}
+footer p {
+    margin-top: .85em;
+    text-indent: 4em;
+    color: rgb(230,230,255);
+}
+footer a {
+    color: rgb(230,230,255);
+    text-decoration: underline;
+}
+/*#region panel Work (main)*/
+.pnlBtn {
+    height: 30px;
+    width:75px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 25px;
+    font-weight: 600;
+    position: relative;
+    left: 350px;
+    text-align: center;
+    padding-top: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.panelHead {
+    width: 100%;
+    height:20%;
+    background-color: @myBlue;
+    color: rgb(230, 230, 255);
+    border-bottom: 2px solid black;
+}
+.panelBody {
+    width: 100%;
+    height: 80%;
+
+}
+.panel {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    text-align: center;
+}
+main > .ptp li {
+    display: inline-block;
+    height: 100px;
+    width: 32%;
+    margin-left: 1%;
+    vertical-align: top;
+
+}
+main > .ptp {
+    position: relative;
+}
+/*#endregion*/
+/*#region tabs (aboutUs)*/
+.tab-panels ul li {
+    display: inline-block;
+    background: #999;
+    padding: 3px 10px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-weight: 200;
+    cursor: pointer;
+
+}
+.tab-panels ul li:hover {
+    color: #fff;
+    background: @myBlue;
+}
+
+.tab-panels ul li.active {
+    color: #fff;
+    background: @myBlue;
+}
+
+.tab-panels .panel {
+    display:none;
+    background: #c9c9c9;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.tab-panels .panel.active {
+    display:block;
+}
+.tabContain {
+    height: 170px;
+    position: relative;
+    top: 15px;
+    margin-bottom: 25px;
+}
+/*#endregion*/
+/*#region slider(products)*/
+
+.slider {
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    top: 35px;
+}
+
+.slider .slides {
+    display: block;
+    width: 6000px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+.slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 720px;
+    height: 400px;
+}
+
+/* helper css, since we don't have images */
+.slide1 {background: red;}
+.slide2 {background: blue;}
+.slide3 {background: green;}
+.slide4 {background: purple;}
+.slide5 {background: pink;}
+
+/*#endregion*/
+/*#region canvas stuff*/
+#container {
+    overflow:hidden;
+    position:fixed;
+    height: 100%;
+}
+#pixie {
+    z-index:0;
+    background:-moz-linear-gradient(top, #040429, #257eb7);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
+}
+/*#endregion*/
+.tato {
+    color:blue;
+    display: inline-block;
+    width: 100px;
+    overflow: hidden;
+    height: 1em;
+    position:relative;
+    top: 2px;
+}
+
+ul button.edit, ul button.noedit, ul button.remove {
+    cursor: pointer;
+
+}
+ul li .edit {
+    display: none;
+}
+
+ul li.edit .edit {
+    display: initial;
+}
+
+ul li.edit .noedit{
+    display: none;
+}
+/* get request styles*/
+#orders li {
+    width: 400px;
+}
+#orderSect {
+    width: 400px;
+}
+#orderWrap {
+}
