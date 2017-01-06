@@ -1,4 +1,4 @@
-﻿ /*
+ /*
 var start = 25;
 for (i = 0; i < 6; i++) {
     start += -25;
@@ -397,6 +397,46 @@ $.ajax({
     },
     error: function () {
         alert("something broke 'get'");
+    },
+    complete: function () {
+        //how much items per page to show
+        var show_per_page = 5;
+        //getting the amount of elements inside content div
+        var number_of_items = $('#orders').children().length;
+        // alert(number_of_items);
+        //calculate the number of pages we are going to have
+        var number_of_pages = Math.ceil(number_of_items / show_per_page);
+
+        //set the value of our hidden input fields
+        $('#current_page').val(0);
+        $('#show_per_page').val(show_per_page);
+
+        //now when we got all we need for the navigation let's make it '
+
+        /*
+        what are we going to have in the navigation?
+            - link to previous page
+            - links to specific pages
+            - link to next page
+        */
+        var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
+        var current_link = 0;
+        while (number_of_pages > current_link) {
+            navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
+            current_link++;
+        }
+        navigation_html += '<a class="next_link" href="javascript:next();">Next</a>';
+
+        $('#page_navigation').html(navigation_html);
+
+        //add active_page class to the first page link
+        $('#page_navigation .page_link:first').addClass('active_page');
+
+        //hide all the elements inside content div
+        $('#orders').children().css('display', 'none');
+
+        //and show the first n (show_per_page) elements
+        $('#orders').children().slice(0, show_per_page).css('display', 'block');
     }
 });
 
@@ -475,54 +515,6 @@ $orders.delegate(".editSave", "click", function () {
         error: function () { alert("something went wrong while editing") }
     });
     $li.removeClass("edit");
-});
-$(document).ready(function () {
-    function dlayHandler() {
-        // pagination work
-
-        //how much items per page to show
-        var show_per_page = 5;
-        //getting the amount of elements inside content div
-        var number_of_items = $('#orders').children().length;
-       // alert(number_of_items);
-        //calculate the number of pages we are going to have
-        var number_of_pages = Math.ceil(number_of_items / show_per_page);
-
-        //set the value of our hidden input fields
-        $('#current_page').val(0);
-        $('#show_per_page').val(show_per_page);
-
-        //now when we got all we need for the navigation let's make it '
-
-        /*
-        what are we going to have in the navigation?
-            - link to previous page
-            - links to specific pages
-            - link to next page
-        */
-        var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
-        var current_link = 0;
-        while (number_of_pages > current_link) {
-            navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
-            current_link++;
-        }
-        navigation_html += '<a class="next_link" href="javascript:next();">Next</a>';
-
-        $('#page_navigation').html(navigation_html);
-
-        //add active_page class to the first page link
-        $('#page_navigation .page_link:first').addClass('active_page');
-
-        //hide all the elements inside content div
-        $('#orders').children().css('display', 'none');
-
-        //and show the first n (show_per_page) elements
-        $('#orders').children().slice(0, show_per_page).css('display', 'block');
-
-        //pagination functions that are needed
-
-    }
-    setTimeout(dlayHandler, 1009);
 });
 
 function previous() {
